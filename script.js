@@ -29,3 +29,18 @@ const indice = diaDoAno % declaracoes.length;
 // Atualiza o HTML
 document.getElementById("declaracao").textContent = declaracoes[indice];
 document.getElementById("foto").src = fotos[indice];
+
+// ===== CONTADOR DE DIAS =====
+
+const dataInicio = new Date("2025-02-10"); // TROQUE PELA DATA DE VOCÊS
+const hojeData = new Date();
+
+// Zerar horas para evitar erro de cálculo
+dataInicio.setHours(0,0,0,0);
+hojeData.setHours(0,0,0,0);
+
+const diferencaTempo = hojeData - dataInicio;
+const diasJuntos = Math.floor(diferencaTempo / (1000 * 60 * 60 * 24));
+
+document.getElementById("contador").textContent =
+    `Estamos juntos há ${diasJuntos} dias 💖`;
